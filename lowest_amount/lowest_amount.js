@@ -1,13 +1,13 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
-ctx.fillStyle = "#FFFFCC";
+ctx.fillStyle = "#f2f2f2";
 ctx.fillRect(0,0,1250,475);
 ctx.font = "30px Arial";
 ctx.fillStyle = "black";
 
 function give_lowest_amount(){
 	ctx.clearRect(0, 0, c.width, c.height);
-	ctx.fillStyle = "#FFFFCC";
+	ctx.fillStyle = "#f2f2f2";
 	ctx.fillRect(0,0,1250,475);
 	ctx.font = "30px Arial";
 	ctx.fillStyle = "black";
