@@ -63,32 +63,47 @@ function give_lowest_amount(){
 		result[1] += 1;
 	}
 	
-	while(total - 0.25 >= 0){
-		total -= 0.25
-		result[0.25] += 1;
-	}
-	
-	while(total - 0.1 >= 0){
-		total -= 0.1
-		result[0.1] += 1;
-	}
+	if (total > 0){
+		while (i < str_convert){
+			if (str_convert[i] != "."){
+				i++
+			}
+			else{
+				break;
+			}
+		}
+		
+		if(str_convert[i+3]){
+			alert("Please Enter A Valid Monetary Value");
+			return;
+		}
+		if(str_convert[i+2]){
+			total = (str_convert[i+1] + "" + str_convert[i+2]);
+		}
+		else{
+			total = (str_convert[i+1] + "" + "0");
+		}
+		while(total - 25 >= 0){
+			total -= 25
+			result[0.25] += 1;
+		}
+		
+		while(total - 10 >= 0){
+			total -= 10
+			result[0.1] += 1;
+		}
 
-	while(total - 0.05 >= 0){
-		total -= 0.05
-		result[0.05] += 1;
+		while(total - 5 >= 0){
+			total -= 5
+			result[0.05] += 1;
+		}
+		
+		while(total - 1 >= 0){
+			total -= 1
+			result[0.01] += 1;
+		}
+		
 	}
-	
-	while(total - 0.01 >= 0){
-		total -= 0.01
-		result[0.01] += 1;
-	}
-
-	
-	if(total > 0.01 ){
-		alert(total);
-		return;
-	}
-	
 
 	hundred = new Image();
 	hundred.src = 'hundred.gif';
@@ -160,12 +175,12 @@ function give_lowest_amount(){
 		ctx.fillText("x" + result[0.05], 1050, 310);
 	}
 	
-	/*
+	
 	penny = new Image();
 	penny.src = 'penny.png';
 	penny.onload = function(){
 		ctx.drawImage(penny, 925, 375, 100, 100);
 		ctx.fillText("x" + result[0.01], 1050, 435);
-	}*/
+	}
 }
 	
