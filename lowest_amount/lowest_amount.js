@@ -30,6 +30,10 @@ function give_lowest_amount(){
 	result[0.05] = 0;
 	result[0.01] = 0;
 	total = str_convert;
+	if (total > 999999999){
+		alert("Just write a cheque Mr. Gates");
+		return;
+	}
 	while(total - 100 >= 0){
 		total -= 100
 		result[100] += 1 
