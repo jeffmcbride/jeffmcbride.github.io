@@ -9,20 +9,20 @@
 	</head>
 	<body>
 		<a href="../index.html">Home</a>
-		<div class="content">
-			<a class="lp" href="../little_projects.html">Little Projects</a> 
-		</div>
-		<div class="content">
-			<a class="res" href="JeffMcBrideResume.pdf">Resume</a> 
-		</div>
-		<div class="content">
-			<a class="git" href="https://github.com/JeffMcBride"><img src="../github.png" style="width:16px;height:16px;"> Github</a> 
-		</div>
+		<nav class="site nav">
+			<a href="#" class="menu-icon">
+			</a>
+			<div class="trigger">
+				<a href="https://github.com/JeffMcBride"><img src="../github.png" style="width:16px;height:16px;"> Github</a> 
+				<a href="JeffMcBrideResume.pdf">Resume</a> 
+				<a href="../little_projects.html">Little Projects</a>	
+			</div>
+		</nav>
 		<center>
-			<h3 style="position: absolute; top: -5px; right:0;left:0;">Enter Your Monetary Value Here</h3>
+			<h3>Enter Your Monetary Value Here</h3>
 			<input type="text" id="input" onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()">
 			<br>
-			<input type="button" value="Go!" onclick="give_lowest_amount()" id="convert" style="margin-top:10px">
+			<input type="button" value="Go!" onclick="give_lowest_amount()" id="convert" style="margin-top:10px;margin-bottom:5px;">
 			<br>
 			
 		<canvas id="myCanvas" width="1250" height="475" style="border:1px solid #FFFFFF;"></canvas>
