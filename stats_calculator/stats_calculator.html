@@ -1,0 +1,48 @@
+<html>
+	<head>  
+		<link rel="stylesheet" style="text/css" href="../style.css">
+		<title>Binary-Decimal Converter</title>
+		<link rel="shortcut icon" href="../favicon.ico">
+
+		<SCRIPT src="stats_calculator.js"></SCRIPT>
+	</head>
+	<body>
+		<a href="../index.html">Home</a>
+		<nav class="site nav">
+			<a href="#" class="menu-icon"></a>
+			<div class="trigger">
+				<a href="https://github.com/JeffMcBride"><img src="../github.png" style="width:16px;height:16px;"> Github</a> 
+				<a href="JeffMcBrideResume.pdf">Resume</a> 
+				<a href="../little_projects.html">Little Projects</a>
+				<a href="mailto:jeff.mcbride@mail.utoronto.ca">Contact Me</a>					
+			</div>
+		</nav>
+		<center>
+		<h3>Stats Calculator</h3> 
+		<input type="text" id="input" 
+		onkeydown = "if (event.keyCode == 13)document.getElementById('update').click()" >
+		<input type="button" value="Add to Set" onclick="update_array()" id="update">
+		<input type="button" value="Undo" onclick="undo()" id="undo">
+		<input type="button" value="Clear" onclick="clear1()" id="clear">
+		<br><br>
+		Set: <input type = "text" id = "output" style="width:350px;"
+		onkeydown = "if (event.keyCode == 13)document.getElementById('calc').click()" >
+		<input type="button" value="Calculate" onclick="calculate()" id="calc">		
+		<br>
+		<h4>Mean</h4>
+		<input type = "text" id = "mean" style="width:350px;">
+		<h4>Population Variance</h4>
+		<input type = "text" id = "variance" style="width:350px">
+		<h4>Population Standard Deviation</h4>
+		<input type = "text" id = "psd" style="width:350px">
+		<h4>Sample Variance</h4>
+		<input type = "text" id = "svariance" style="width:350px;">
+		<h4>Sample Standard Deviation</h4>
+		<input type = "text" id = "ssd" style="width:350px;">
+		
+		
+		
+		</center>
+		
+	</body>
+</html>
