@@ -47,20 +47,25 @@ class post {
   
 }
 
+//Create ball
 football = new ball(150, 200);
 football.draw();
 
+//Create post
 Post = new post(1000, 250);
 Post.draw();
 
+//Move ball constantly (Set Interval in html)
 function moveBall(){
 	football.move();
 }
 
+//Move one post
 function movePost(){
 	Post.move();
 }
 
+//Make ball jump up
 function jump(){
 	football.jump();
 }
