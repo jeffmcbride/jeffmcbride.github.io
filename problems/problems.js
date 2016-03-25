@@ -12,8 +12,11 @@ function getFib(n){
 function outFib(){
 	var input = document.getElementById("input").value;
 	var output = document.getElementById("output");
-	
-		var str_convert = input.toString();
+	if (input > 30){
+		output.value = "Let's try to keep n below 30."
+		return
+	}
+	var str_convert = input.toString();
 	var length = str_convert.length;
 	var i = 0;
 	result = ""
@@ -34,6 +37,7 @@ function outFib(){
 		output.value = ("Please enter a natural number.");
 		return;
 	}
+	
 	output.value = "fib(" + input + ") = " + getFib(input);
 }
 
@@ -59,7 +63,11 @@ function outPrime(){
 	var length = str_convert.length;
 	var i = 0;
 	result = ""
-				
+			
+	if (input > 99999){
+		output.value = "Let's cap it at like, 5 digits."
+		return
+	}
 	//Iterate through decimal value to make sure it is a valid natural
 	while (i < length){
 				
