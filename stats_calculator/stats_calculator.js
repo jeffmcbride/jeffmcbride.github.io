@@ -5,13 +5,13 @@ function update_array(){
 	var input = document.getElementById("input");
 	var output = document.getElementById("output");
 	if (isNaN(parseFloat(input.value))){
-		input.value = "Please enter a number"
+		alert("Please enter a number");
 	}
 	else{
 		set.push(input.value)
-		output.value = (set);
-		input.value = ""
 	}
+	output.value = (set);
+	input.value = ""
 
 }
 
