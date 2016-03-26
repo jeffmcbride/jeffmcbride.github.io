@@ -116,8 +116,8 @@
 			ctx.font = '12px sans-serif';
 			ctx.fillText('Score: ' + score + '   Level: ' + difficulty, 225, 125);
 			ctx.fillStyle="white"
-			ctx.fillText("CONTROL SNAKE WITH ARROW KEYS. AVOID HITTING WALLS AND YOURSELF",50,450);
-			ctx.fillText("BEWARE OF SNAKE GETTING BIGGER AND FASTER",130,475);
+			ctx.fillText("CONTROL SNAKE WITH ARROW KEYS. AVOID HITTING WALLS AND YOURSELF.",50,450);
+			ctx.fillText("BEWARE OF SNAKE GETTING BIGGER AND FASTER.",130,475);
 			
 		}
 		function makeFood(grid){
