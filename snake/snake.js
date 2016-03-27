@@ -8,6 +8,7 @@
 		var snake= []
 		snake.length=4
 		var score=0
+		var highScore = 0;
 		var difficulty=1
 		var direction=0
 		var gameOn=false;//variable that checks if game is playing or not
@@ -148,7 +149,6 @@
 			ctx.fillText("Game Over",230,332)
 			ctx.fillText("Your Score Was " + score +"!", 199,365);
 			ctx.fillText("Play Again To Beat It!", 192,460);
-			var highScore = 0;
 			if(score>highScore)highScore=score;	
 			var temp=""	
 
