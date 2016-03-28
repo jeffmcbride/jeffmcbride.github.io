@@ -40,7 +40,7 @@
 			}
 		}
 		var buttons=[]
-		buttons[0]=button(250,250,50,50);
+		buttons[0]=button(250,150,50,50);
 		 for(var i=0;i<gridLength;i++){
 			grid[i]=[]//creates 2D grid
 			for(var k=0;k<gridLength;k++){
@@ -65,7 +65,7 @@
 		}, false);
 		function init(){	//main game function
 			ctx.fillStyle="black"
-			ctx.fillRect(0,0,550,480);
+			ctx.fillRect(0,0,550,395);
 			for(var i=snake.length-1;i>=0;i--){
 				if(i==0){//working with the head of the snake
 					if (direction==0) snake[0]={x:snake[0].x+1,y:snake[0].y}//moves snake to the right
@@ -106,7 +106,7 @@
 					if(grid[i][k]==1)ctx.fillStyle="red"//food and walls
 					else if(grid[i][k]==2)ctx.fillStyle="white"//snake
 					else ctx.fillStyle="black"//backround
-					ctx.fillRect(i*10+150,k*10+150,9,9);//makes grid
+					ctx.fillRect(i*10+150,k*10+50,9,9);//makes grid
 				}
 			}	
 			if(gameOn==true){//runs init function and moves snake for a certain time interval
@@ -115,10 +115,10 @@
 			}
 			ctx.fillStyle = 'red';
 			ctx.font = '12px sans-serif';
-			ctx.fillText('Score: ' + score + '   Level: ' + difficulty, 225, 125);
+			ctx.fillText('Score: ' + score + '   Level: ' + difficulty, 225, 25);
 			ctx.fillStyle="white"
-			ctx.fillText("CONTROL SNAKE WITH ARROW KEYS. AVOID HITTING WALLS AND YOURSELF.",50,450);
-			ctx.fillText("BEWARE OF SNAKE GETTING BIGGER AND FASTER.",130,475);
+			ctx.fillText("CONTROL SNAKE WITH ARROW KEYS. AVOID HITTING WALLS AND YOURSELF.",50,350);
+			ctx.fillText("BEWARE OF SNAKE GETTING BIGGER AND FASTER.",130,375);
 			
 		}
 		function makeFood(grid){
@@ -146,14 +146,14 @@
 			play();
 			ctx.fillStyle="yellow"
 			ctx.font="18px sans-serif"
-			ctx.fillText("Game Over",230,332)
-			ctx.fillText("Your Score Was " + score +"!", 199,365);
-			ctx.fillText("Play Again To Beat It!", 192,460);
+			ctx.fillText("Game Over",230,232)
+			ctx.fillText("Your Score Was " + score +"!", 199,265);
+			ctx.fillText("Play Again To Beat It!", 192,360);
 			if(score>highScore)highScore=score;	
 			var temp=""	
 
 
-			ctx.fillText("High Score: " + highScore, 219,435);
+			ctx.fillText("High Score: " + highScore, 219,335);
 		
 
 			
@@ -165,7 +165,7 @@
 						if(grid[i][k]==1)ctx.fillStyle="red"//food and walls
 						else if(grid[i][k]==2)ctx.fillStyle="white"//snake
 						else ctx.fillStyle="black"//backround
-						ctx.fillRect(i*10+150,k*10+150,9,9);//makes grid
+						ctx.fillRect(i*10+150,k*10 + 50,9,9);//makes grid
 					}
 				}	
 				for(var l=0;l<gridLength;l++){
@@ -176,11 +176,11 @@
 				}
 				ctx.fillStyle="yellow"
 				ctx.font = '25px sans-serif';
-				ctx.fillText("SNAKE!",230,225);
+				ctx.fillText("SNAKE!",230,125);
 				buttons[0].drawMe();//draws play game button
 				ctx.fillStyle="yellow"
 				ctx.font = '9px sans-serif';
-				ctx.fillText("Play Game",252,275);
+				ctx.fillText("Play Game",252,175);
 				snake.length=4
 				canvas.addEventListener('click', function (evt){
 					while(buttons[0].mouseOver() && gameOn==false){//runs game when button is 
