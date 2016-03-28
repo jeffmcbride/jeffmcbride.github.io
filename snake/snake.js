@@ -146,14 +146,13 @@
 			play();
 			ctx.fillStyle="yellow"
 			ctx.font="18px sans-serif"
-			ctx.fillText("Game Over",230,232)
-			ctx.fillText("Your Score Was " + score +"!", 199,265);
-			ctx.fillText("Play Again To Beat It!", 192,360);
+			ctx.fillText("Game Over",230,248)
+			ctx.fillText("Your Score Was " + score +"!", 199,330);
+			ctx.fillText("Play Again To Beat It!", 192,380);
 			if(score>highScore)highScore=score;	
-			var temp=""	
 
 
-			ctx.fillText("High Score: " + highScore, 219,335);
+			ctx.fillText("High Score: " + highScore, 219,355);
 		
 
 			
