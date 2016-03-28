@@ -65,7 +65,7 @@
 		}, false);
 		function init(){	//main game function
 			ctx.fillStyle="black"
-			ctx.fillRect(0,0,550,395);
+			ctx.fillRect(0,0,550,400);
 			for(var i=snake.length-1;i>=0;i--){
 				if(i==0){//working with the head of the snake
 					if (direction==0) snake[0]={x:snake[0].x+1,y:snake[0].y}//moves snake to the right

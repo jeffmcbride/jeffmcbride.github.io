@@ -1,5 +1,5 @@
 body{
-	background-color: #f2f2f2;
+	background-color: #DCDCDC;
 	font-family:Courier New;
 }
 
@@ -17,7 +17,7 @@ body{
 
 
 a:link, a:visited {
-   	background-color: #f2f2f2;
+   	background-color: #DCDCDC;
 	color:black; 
 	font-family:Lucida Console;
     padding: 14px 25px;
@@ -27,7 +27,7 @@ a:link, a:visited {
 }
 
 a:hover{
-	background-color: #ffffe6;
+	background-color: #F8F8FF;
 }
 
 
@@ -39,6 +39,19 @@ a:hover{
 }
 
 footer{
+	font-family:Serif;
 	text-align:right;
+	padding-right:50px;
+	padding-left:50px;
 	font-size:14px;
+}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 0.1px;
 }
