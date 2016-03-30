@@ -110,8 +110,8 @@
 				}
 			}	
 			if(gameOn==true){//runs init function and moves snake for a certain time interval
-			if (difficulty<5)	setTimeout(init,250-(difficulty*50));
-			else setTimeout(init,50)//stops increasing speed when it gets too high
+			if (difficulty<5)	setTimeout(init,350-(difficulty*70));
+			else setTimeout(init,70)//stops increasing speed when it gets too high
 			}
 			ctx.fillStyle = 'red';
 			ctx.font = '12px sans-serif';
