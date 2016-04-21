@@ -2,13 +2,48 @@ function bin_to_dec(){
 	var input = document.getElementById("input").value;
 	var output = document.getElementById("output");		
 	var str_convert = input.toString();
-	output.value = parseInt(str_convert, 2);
+	var i = 0;
+	var length = str_convert.length;	
+	while (i < length){
+		//Error checking
+		if((str_convert[i] != 1) && (str_convert[i] != 0)){
+			output.value = ('"' + input + '"' + " is not a binary number.");
+			return;
+		}
+		i++;
+	}
+				
+	//Input was blank
+	if(i == 0){
+		output.value = ("Please enter a binary number.");
+		return;
+	}
+	
+	else{
+		output.value = parseInt(str_convert, 2);
+	}
 }
 function hex_to_dec(){
 	var input = document.getElementById("input").value;
 	var output = document.getElementById("output");
 	var str_convert = input.toString();
+	var length = str_convert.length;
+	var i = 0;
+	while(i < length){
+		if (isNaN(parseInt(str_convert[i], 16))){
+			output.value = ('"' + input + '"' + " is not a hexidecimal number.");
+			return;
+		} 
+		i++;
+	}
+	
+	if (i == 0){
+		output.value = "Please enter a hexidecimal number.";
+		return;
+	}
 	output.value = parseInt(str_convert, 16);
+	
+	
 }
 function dec_to_bin(){
 	var input = document.getElementById("input").value;
@@ -56,23 +91,20 @@ function hex_to_bin(){
 	var str = input.toString();
 	var i = 0;
 	result = ""
-	
 	var str_convert = parseInt(str, 16).toString();
-	var length = str_convert.length;	
+	var length = str.length;	
 	//Iterate through decimal value to make sure it is a valid natural
 	while (i < length){
-		
-		//Error checking
-		if(isNaN(str_convert[i])){
-			output.value = ('"' + input + '"' + " is not a natural number.");
+		if (isNaN(parseInt(str[i], 16))){
+			output.value = ('"' + input + '"' + " is not a hexidecimal number.");
 			return;
-		}
+		} 
 		i++;
 	}
 				
 	//Input was blank
 	if(i == 0){
-		output.value = ("Please enter a natural number.");
+		output.value = "Please enter a hexidecimal number.";
 		return;
 	}
 				
@@ -149,16 +181,15 @@ function dec_to_hex(){
 function bin_to_hex(){
 	var input = document.getElementById("input").value;
 	var output = document.getElementById("output");		
-	var str = input.toString();
+	var str_convert = input.toString();
 	var i = 0;
-	result = ""
+	var result = "";
 	var remainder = 0;
-	var str_convert = parseInt(str, 2).toString();
+	var dec = ""
 	var length = str_convert.length;	
 	while (i < length){
-				
 		//Error checking
-		if(isNaN(str_convert[i])){
+		if((str_convert[i] != 1) && (str_convert[i] != 0)){
 			output.value = ('"' + input + '"' + " is not a binary number.");
 			return;
 		}
@@ -170,10 +201,14 @@ function bin_to_hex(){
 		output.value = ("Please enter a binary number.");
 		return;
 	}
-				
+	
+	else{
+		dec = parseInt(str_convert, 2).toString();
+	}
+		
 	//Convert the decimal number to binary
-	while(str_convert != 0){
-		remainder = str_convert % 16;
+	while(dec != 0){
+		remainder = dec % 16;
 		if (remainder == 10){
 			remainder = "A";
 		}
@@ -192,8 +227,8 @@ function bin_to_hex(){
 		if (remainder == 15){
 			remainder = "F";
 		}
-		result = (remainder) + result;
-		str_convert = parseInt(str_convert / 16, 10);
+		result = remainder + result;
+		dec = parseInt(dec/16, 10);
 	}
 					
 	//Final result
