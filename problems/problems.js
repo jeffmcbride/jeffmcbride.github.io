@@ -1,22 +1,21 @@
-
-	
 function getFib(n){	
-	if(n <= 1){
-		return 1
+	if (n == 1){
+		return 1;
 	}
-	else{
-		return getFib(n-1) +getFib(n-2)
-		
+	if (n == 2){
+		return 1;
 	}
+	var array = [1, 1];
+	for(var i = 2; i < n; i++){
+		array.push(array[i - 1] + array[i - 2]);
+	}
+	return array[n - 1];
 }
 
 function outFib(){
 	var input = document.getElementById("input").value;
 	var output = document.getElementById("output");
-	if (input > 30){
-		output.value = "Let's try to keep n below 30."
-		return
-	}
+
 	var str_convert = input.toString();
 	var length = str_convert.length;
 	var i = 0;
@@ -42,18 +41,13 @@ function outFib(){
 	output.value = "fib(" + input + ") = " + getFib(input);
 }
 
-function isPrime(num, i){
-	if(i == 1){
-		return 1;
-	}
-	else{
-		if(num % i == 0){
-			return 0;
-		}
-		else{
-			return(isPrime(num, i-1));
-		}
-	}
+function isPrime(value) {
+    for(var i = 2; i < value; i++) {
+        if(value % i === 0) {
+            return 0;
+        }
+    }
+    return 1;
 }
 
 function outPrime(){
@@ -65,10 +59,7 @@ function outPrime(){
 	var i = 0;
 	result = ""
 			
-	if (input > 99999){
-		output.value = "Let's cap it at like, 5 digits."
-		return
-	}
+	
 	//Iterate through decimal value to make sure it is a valid natural
 	while (i < length){
 				
@@ -87,7 +78,7 @@ function outPrime(){
 	}
 	
 	
-	if (isPrime(input, Math.floor(input/2)) == 1){
+	if (isPrime(input) == 1){
 		output.value = input + " is prime."
 	}
 	else{
