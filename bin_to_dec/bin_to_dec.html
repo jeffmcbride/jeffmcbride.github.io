@@ -18,16 +18,29 @@
 		</nav>
 		<center>
 		<h3>Binary-Decimal Converter</h3>
-		<label><input type="checkbox" value="Binary" id="bin" 
-		onclick="if (this.checked) document.getElementById('dec').checked = false"
+		<label><input type="checkbox" value="Binary" id="b2d" 
 		onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()"> 
 		Binary -> Decimal</label>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<label><input type="checkbox" value="Decimal" id="dec" 
-		onclick="if (this.checked) document.getElementById('bin').checked = false" 
+		<label><input type="checkbox" value="Decimal" id="d2b" 
 		onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()">
 		Decimal -> Binary</label>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<label><input type="checkbox" value="hexidecimal" id="h2d" 
+		onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()">
+		Hexidecimal -> Decimal</label>
 		<br>
+		<label><input type="checkbox" value="hexidecimal" id="b2h" 
+		onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()">
+		Binary -> Hexidecimal</label>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<label><input type="checkbox" value="hexidecimal" id="d2h" 
+		onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()">
+		Decimal -> Hexidecimal</label>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<label><input type="checkbox" value="hexidecimal" id="h2b" 
+		onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()">
+		Hexidecimal -> Binary</label>
 		<p>Type in your value to convert</p>
 		<input type="text" id="input" 
 		onkeydown = "if (event.keyCode == 13)document.getElementById('convert').click()" >
