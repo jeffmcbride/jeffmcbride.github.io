@@ -1,5 +1,6 @@
 
 var set = [];
+var x;
 
 function update_array(){
 	var input = document.getElementById("input");
@@ -10,7 +11,9 @@ function update_array(){
 	else{
 		set.push(input.value)
 	}
-	output.value = (set);
+	
+	x = set.toString().replace(/,/g, ", ");
+	output.value = x;
 	input.value = ""
 
 }
@@ -26,7 +29,8 @@ function undo(){
 	var input = document.getElementById("input");
 	var output = document.getElementById("output");
 	set.pop();
-	output.value = (set);
+	x = set.toString().replace(/,/g, ", ");
+	output.value = (x);
 }
 
 
