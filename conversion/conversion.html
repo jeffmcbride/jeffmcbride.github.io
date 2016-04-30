@@ -1,10 +1,10 @@
 <html>
 	<head>  
 		<link rel="stylesheet" style="text/css" href="../style.css">
-		<title>Bin-Dec-Hex Converter</title>
+		<title>Conversion Kit</title>
 		<link rel="shortcut icon" href="../favicon.ico">
 
-		<SCRIPT src="bindechex.js"></SCRIPT>
+		<SCRIPT src="conversion.js"></SCRIPT>
 	</head>
 	<body>
 		<a href="../index.html">Home</a>
@@ -18,30 +18,30 @@
 		</nav>
 		<center>
 
-		<h3>Binary-Decimal-Hexidecimal Converter</h3>
-		<label><input type="radio" name="conversion" id="b2d" 
+		<h3>Conversion Kit</h3>
+		<label><input type="radio" name="conversion" id="c2f" 
 		onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()"> 
-		Binary -> Decimal</label>
+		Celcius -> Fahrenheit</label>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<label><input type="radio" name="conversion" id="d2b" 
+		<label><input type="radio" name="conversion" id="k2m" 
 		onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()">
-		Decimal -> Binary</label>
+		Kilometres -> Miles</label>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<label><input type="radio" name="conversion" id="h2d" 
+		<label><input type="radio" name="conversion" id="p2k" 
 		onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()">
-		Hexidecimal -> Decimal</label>
+		Pounds -> Kilograms</label>
 		<br>
-		<label><input type="radio" name="conversion" id="b2h" 
+		<label><input type="radio" name="conversion" id="f2c" 
 		onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()">
-		Binary -> Hexidecimal</label>
+		Fahrenheit -> Celcius</label>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<label><input type="radio" name="conversion" id="d2h" 
+		<label><input type="radio" name="conversion" id="m2k" 
 		onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()">
-		Decimal -> Hexidecimal</label>
+		Miles -> Kilometres</label>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<label><input type="radio" name="conversion" id="h2b" 
+		<label><input type="radio" name="conversion" id="k2p" 
 		onkeydown = "if (event.keyCode == 13) document.getElementById('convert').click()">
-		Hexidecimal -> Binary</label>
+		Kilograms -> Pounds</label>
 		<p>Type in your value to convert</p>
 		<input type="text" id="input" 
 		onkeydown = "if (event.keyCode == 13)document.getElementById('convert').click()" >
