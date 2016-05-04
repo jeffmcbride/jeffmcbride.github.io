@@ -44,7 +44,7 @@ function miles_to_kilo(){
 		output.value = ("Please enter a number.")
 		return;
 	}
-	result = (str_convert/0.62137);
+	result = (str_convert * (1/0.62137));
 	output.value = (result);
 }
 
@@ -76,7 +76,7 @@ function lb_to_kg(){
 		output.value = ("Please enter a number.")
 		return;
 	}
-	result = (str_convert/2.2046);
+	result = (str_convert * (1/2.2046));
 	output.value = (result);
 }
 
