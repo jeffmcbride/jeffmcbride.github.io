@@ -8,7 +8,7 @@ function celc_to_far(){
 	result = ""
 				
 	if(isNaN(str_convert)){
-		output.value = ("Please enter a number.")
+		output.value = ("Please enter a temperature.")
 		return;
 	}
 	result = str_convert * (9/5) + 32;
@@ -25,7 +25,7 @@ function far_to_celc(){
 	result = ""
 				
 	if(isNaN(str_convert)){
-		output.value = ("Please enter a number.")
+		output.value = ("Please enter a temperature.")
 		return;
 	}
 	result = (str_convert - 32) * (5/9);
@@ -33,6 +33,7 @@ function far_to_celc(){
 }
 
 function miles_to_kilo(){
+	
 	var input = document.getElementById("input").value;
 	var output = document.getElementById("output");		
 	var str_convert = input.toString();
@@ -40,8 +41,8 @@ function miles_to_kilo(){
 	var i = 0;
 	result = ""
 				
-	if(isNaN(str_convert)){
-		output.value = ("Please enter a number.")
+	if(isNaN(str_convert) || str_convert < 0){
+		output.value = ("Please enter a positive number.")
 		return;
 	}
 	result = (str_convert * (1/0.62137));
@@ -56,8 +57,8 @@ function km_to_miles(){
 	var i = 0;
 	result = ""
 				
-	if(isNaN(str_convert)){
-		output.value = ("Please enter a number.")
+	if(isNaN(str_convert) || str_convert < 0){
+		output.value = ("Please enter a positive number.")
 		return;
 	}
 	result = (str_convert*0.62137);
@@ -72,8 +73,8 @@ function lb_to_kg(){
 	var i = 0;
 	result = ""
 				
-	if(isNaN(str_convert)){
-		output.value = ("Please enter a number.")
+	if(isNaN(str_convert) || str_convert < 0){
+		output.value = ("Please enter a positive number.")
 		return;
 	}
 	result = (str_convert * (1/2.2046));
@@ -81,6 +82,7 @@ function lb_to_kg(){
 }
 
 function kg_to_lb(){
+	
 	var input = document.getElementById("input").value;
 	var output = document.getElementById("output");		
 	var str_convert = input.toString();
@@ -88,8 +90,8 @@ function kg_to_lb(){
 	var i = 0;
 	result = ""
 				
-	if(isNaN(str_convert)){
-		output.value = ("Please enter a number.")
+	if(isNaN(str_convert) || str_convert < 0){
+		output.value = ("Please enter a positive number.")
 		return;
 	}
 	result = (str_convert*2.2046);
@@ -104,8 +106,8 @@ function m_to_f(){
 	var i = 0;
 	result = ""
 				
-	if(isNaN(str_convert)){
-		output.value = ("Please enter a number.")
+	if(isNaN(str_convert) || str_convert < 0){
+		output.value = ("Please enter a positive number.")
 		return;
 	}
 	result = (str_convert*3.2808);
@@ -119,9 +121,9 @@ function f_to_m(){
 	var length = str_convert.length;
 	var i = 0;
 	result = ""
-				
-	if(isNaN(str_convert)){
-		output.value = ("Please enter a number.")
+	
+	if(isNaN(str_convert) || str_convert < 0){			
+		output.value = ("Please enter a positive number.")
 		return;
 	}
 	result = (str_convert *(1/3.2808));
