@@ -95,6 +95,40 @@ function kg_to_lb(){
 	result = (str_convert*2.2046);
 	output.value = (result);
 }
+
+function m_to_f(){
+	var input = document.getElementById("input").value;
+	var output = document.getElementById("output");		
+	var str_convert = input.toString();
+	var length = str_convert.length;
+	var i = 0;
+	result = ""
+				
+	if(isNaN(str_convert)){
+		output.value = ("Please enter a number.")
+		return;
+	}
+	result = (str_convert*3.2808);
+	output.value = (result);
+}
+
+function f_to_m(){
+	var input = document.getElementById("input").value;
+	var output = document.getElementById("output");		
+	var str_convert = input.toString();
+	var length = str_convert.length;
+	var i = 0;
+	result = ""
+				
+	if(isNaN(str_convert)){
+		output.value = ("Please enter a number.")
+		return;
+	}
+	result = (str_convert *(1/3.2808));
+	output.value = (result);
+}
+
+
 //Function to determine which conversion to do based on checkboxes
 function convert(){
 	var output = document.getElementById("output");
@@ -115,6 +149,12 @@ function convert(){
 	}
 	else if(k2p.checked){
 		kg_to_lb();
+	}
+	else if(m2f.checked){
+		m_to_f();
+	}
+	else if(f2m.checked){
+		f_to_m();
 	}
 
 	//Neither checkbox is checked off
