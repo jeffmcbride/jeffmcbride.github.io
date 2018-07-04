@@ -1,9 +1,12 @@
 var br = function () { return document.createElement('BR'); }
 var errorMsg = "The card should be A,K,Q,J or 2-10"
-    var myCards = [];
-	var dealer = ""
+var myCards = [];
+var dealer = ""
 
 function playBJ() {
+	myCards = [];
+	dealer = ""
+		document.body.appendChild(br());
 	dealer = promptMsg("Dealer's card", "Enter the dealer's card", errorMsg);
 	document.body.append("Dealer's card: " + dealer);
 	document.body.appendChild(br());
@@ -67,32 +70,32 @@ function suggestAction(cards, dealer) {
 	}
     //Two of the same cards
     if (cards[0] == cards[1] && cards.length == 2) {
-        switch (cards[0]) {
+        switch (true) {
             case "A":
                 splitStr = "AKQJ2345678910";
                 break;
-            case "2":
+            case (cards[0] == "2"):
                 splitStr = "34567";
                 break;
-            case "3":
+            case (cards[0] == "3"):
                 splitStr = "4567";
                 break;
-            case "4":
+            case (cards[0] == "4"):
                 doubleStr = "56"
                 break;
-            case "5":
+            case (cards[0] == "5"):
                 doubleStr = "23456789";
                 break;
-            case "6":
+            case (cards[0] == "6"):
                 splitStr = "23456";
                 break;
-            case "7":
+            case (cards[0] == "7"):
                 splitStr = "234567";
                 break;
-            case "8":
+            case (cards[0] == "8"):
                 splitStr = "AKQJ2345678910";
                 break;
-            case "9":
+            case (cards[0] == "9"):
                 splitStr = "2345689";
                 standStr = "710A";
                 break;
