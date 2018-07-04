@@ -17,7 +17,7 @@ function playBJ() {
     document.body.append("Card #2: " + c2);
     document.body.appendChild(br());
     myCards.push(c1, c2);
-    suggestAction(myCards, dealer)
+    suggestAction(myCards, dealer, false)
 }
 
 function validCardInput(card) {
@@ -45,33 +45,38 @@ function promptMsg(placeHolder, originalMsg, error) {
     return x;
 }
 
-function suggestAction(cards, dealer) {
+function suggestAction(cards, dealer, ace) {
     //One deck
     var doubleStr = "";
     var splitStr = "";
     var standStr = "";
     var blackjack = false;
-	var ace = false;
     var sum = 0
     for (var i = 0; i < cards.length; i++) {
         if ("KQJ".includes(cards[i])) {
             sum += 10;
         }
         else if (cards[i] == "A") {
-            if sum += 11;
-			ace = true;
+			if (ace != true){
+				sum += 11;
+				ace = true;
+			}
+			else{
+				sum += 1;
+			}
         }
+		
         else {
             sum += parseInt(cards[i]);
         }
     }
 	if(sum > 21){
 		if (ace == true){
-			sum -= 10;
+			suggestAction(myCards, dealer, true)
 		}
 		else{
-		alert("Sorry, you busted!");
-		return;
+			alert("Sorry, you busted!");
+			return;
 		}
 	}
     //Two of the same cards
@@ -184,7 +189,7 @@ function suggestAction(cards, dealer) {
 		myCards.push(nextCard);
 		document.body.append("Card #" + myCards.length + ": " + nextCard);
 		document.body.appendChild(br());
-		suggestAction(myCards, dealer)	
+		suggestAction(myCards, dealer, false)	
     }
 }
 
