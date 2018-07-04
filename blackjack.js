@@ -7,12 +7,12 @@ function playBJ() {
 	myCards = [];
 	dealer = ""
 		document.body.appendChild(br());
-	dealer = promptMsg("Dealer's card", "Enter the dealer's card", errorMsg);
+	dealer = promptMsg("", "Enter the dealer's card", errorMsg);
 	document.body.append("Dealer's card: " + dealer);
 	document.body.appendChild(br());
-    var c1 = promptMsg("Card #1", "Enter your first card", errorMsg);
+    var c1 = promptMsg("", "Enter your first card", errorMsg);
     document.body.append("Card #1: " + c1);
-    var c2 = promptMsg("Card #2", "Enter your second card", errorMsg);
+    var c2 = promptMsg("", "Enter your second card", errorMsg);
     document.body.appendChild(br());
     document.body.append("Card #2: " + c2);
     document.body.appendChild(br());
@@ -51,22 +51,28 @@ function suggestAction(cards, dealer) {
     var splitStr = "";
     var standStr = "";
     var blackjack = false;
+	var ace = false;
     var sum = 0
     for (var i = 0; i < cards.length; i++) {
         if ("KQJ".includes(cards[i])) {
             sum += 10;
         }
         else if (cards[i] == "A") {
-            sum += 11;
+            if sum += 11;
+			ace = true;
         }
         else {
             sum += parseInt(cards[i]);
         }
     }
-	
 	if(sum > 21){
+		if (ace == true){
+			sum -= 10;
+		}
+		else{
 		alert("Sorry, you busted!");
 		return;
+		}
 	}
     //Two of the same cards
     if (cards[0] == cards[1] && cards.length == 2) {
