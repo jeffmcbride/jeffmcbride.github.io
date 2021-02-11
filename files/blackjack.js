@@ -3,6 +3,7 @@ var errorMsg = "The card should be A,K,Q,J or 2-10"
 var myCards = [];
 var dealer = ""
 
+
 function playBJ() {
 	var deck = $("input[type='radio'][name='deck']:checked").val();
 	myCards = [];
@@ -185,6 +186,8 @@ function suggestAction(cards, dealer, ace) {
     }
     else if (blackjack == true) {
         alert("Blackjack baby!")
+
+		
     }
     else {
         alert("Hit");
